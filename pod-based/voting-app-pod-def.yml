@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: voiting-app-pod
+  labels:
+    name: voiting-app-pod
+    app: voting-app-demo
+spec:
+  containers:
+  - name: examplevotingapp-vote
+    image: dockersamples/examplevotingapp_vote
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+    - containerPort: 80
